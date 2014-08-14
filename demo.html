@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>itunes-lookup Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="itunes-lookup.html">
+
+</head>
+<body unresolved>
+
+  <p>An `itunes-lookup` can be used as a data source - like this:</p>
+
+  <polymer-element name="itunes-lookup-result" attributes="appId" noscript>
+    <template>
+      <input type="text" value={{appId}}></input>
+      <itunes-lookup appId={{appId}} result={{result}}></itunes-lookup>
+
+      <h1>{{result.trackName}}</h1>
+      <p>{{result.description}}</p>
+    </template>
+  </polymer-element>
+
+  <itunes-lookup-result appId="284910350"></itunes-lookup-result>
+</body>
+</html>
