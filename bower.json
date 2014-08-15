@@ -1,6 +1,13 @@
 {
   "name": "itunes-lookup",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": [
+    {"name": "Niklas Ström", "email": "niklas.strom@gmail.com"}
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/niklasdstrom/itunes-lookup.git"
+  },
   "keywords": "itunes, lookup, polymer, web-components",
   "main": "itunes-lookup.html",
   "description": "Connection to the itunes lookup api",
