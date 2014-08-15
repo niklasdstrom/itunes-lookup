@@ -39,18 +39,6 @@ Element providing solution to no problem in particular.
        */
       result: null,
 
-      observe: {
-        appId: 'performSearch'
-      },
-
-      performSearch: function () {
-        if (this.appId) {
-          // perform lookup at itunes.
-          var ajax = this.$.search;
-          ajax.go();
-        }
-      },
-
       ready: function () {
         this.$.search.addEventListener('polymer-response',
             function (e) {
