@@ -2,7 +2,10 @@
   "name": "itunes-lookup",
   "version": "0.0.1",
   "author": [
-    {"name": "Niklas Ström", "email": "niklas.strom@gmail.com"}
+    {
+      "name": "Niklas Ström",
+      "email": "niklas.strom@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -16,5 +19,8 @@
     "polymer": "Polymer/polymer#~0.3.4",
     "polymer-test-tools": "Polymer/polymer-test-tools#~0.3.3",
     "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0"
+  },
+  "devDependencies": {
+    "paper-elements": "Polymer/paper-elements#~0.3.5"
   }
 }
