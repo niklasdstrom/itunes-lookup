@@ -1,0 +1,57 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer-jsonp/polymer-jsonp.html">
+
+<!--
+Element providing solution to no problem in particular.
+
+##### Example
+
+    <itunes-lookup></itunes-lookup>
+
+@element itunes-lookup
+@blurb Element providing solution to no problem in particular.
+@status alpha
+@homepage http://niklasdstrom.github.io/itunes-lookup
+-->
+<polymer-element name="itunes-lookup" attributes="appId result">
+  <template>
+    <polymer-jsonp id="search"
+                  auto
+                  url="https://itunes.apple.com/lookup?id={{appId}}&callback=">
+    </polymer-jsonp>
+  </template>
+  <script>
+    Polymer('itunes-lookup', {
+      /**
+       * The app id to be searched
+       * @attribute appId
+       * @type string
+       * @default null
+       */
+      appId: null,
+
+      /**
+       * The resulting app
+       * If multiple responses are returned
+       * (which they shouldn't), the first one is picked
+       * @attribute result
+       * @type object
+       */
+      result: null,
+
+      ready: function () {
+        this.$.search.addEventListener('polymer-response',
+            function (e) {
+              // pick the first response
+              var response = e.detail.response.results;
+              if (response instanceof Array && response.length > 0){
+                this.result = response[0];
+              }
+            }.bind(this)
+          );
+        }
+
+    });
+  </script>
+
+</polymer-element>

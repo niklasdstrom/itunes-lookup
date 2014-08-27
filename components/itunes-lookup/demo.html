@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>itunes-lookup Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="itunes-lookup.html">
+  <link rel="import" href="../core-header-panel/core-header-panel.html">
+  <link rel="import" href="../core-toolbar/core-toolbar.html">
+  <link rel="import" href="../paper-input/paper-input.html">
+
+  <style>
+
+    body {
+      font-family: sans-serif;
+    }
+
+    core-header-panel {
+      height: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    core-toolbar {
+      background: #03a9f4;
+      color: white;
+    }
+    .content{
+      padding: 10px 30px;
+    }
+  </style>
+</head>
+
+<body unresolved fullbleed layout vertical>
+  <polymer-element name="itunes-lookup-result" attributes="appId" noscript>
+    <template>
+      <style>
+        img#icon{
+          border-radius:32px;
+          border: 1px solid rgba(0,0,0,0.1);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+        }
+        .section{
+          margin: 0 20px 20px 20px;
+        }
+      </style>
+      <paper-input label="App id" floatingLabel="true" value={{appId}}></paper-input>
+      <itunes-lookup appId={{appId}} result={{result}}></itunes-lookup>
+
+      <div horizontal layout>
+        <img id="icon" class="section" src="{{result.artworkUrl512}}" width="175" height="175"/>
+        <div class="section" flex>
+          <h3>{{result.trackName}}</h3>
+          <h4>{{result.genres[0]}}</h4>
+          <h4><a href="{{result.trackViewUrl}}">View in iTunes</a></h4>
+        </div>
+        <div class="section" flex>
+          <h3>{{result.formattedPrice}}</h3>
+          <h4>Current version rating {{result.averageUserRatingForCurrentVersion}}</h4>
+          <h4>Overall rating {{result.averageUserRating}}</h4>
+        </div>
+      </div>
+    </template>
+  </polymer-element>
+
+
+  <core-header-panel flex>
+
+    <core-toolbar>
+      <span>itunes-lookup</span>
+    </core-toolbar>
+
+    <div class="content">
+      <!-- main page content will go here -->
+      <p>An `itunes-lookup` can be used as a data source - like this: (<a href="http://www.pttrns.com/p/3">inspired by the pttrns.com app header</a>)</p>
+
+      <p>Try entering the following app ids</p>
+      <ul>
+        <li>284910350</li>
+        <li>284882215</li>
+        <li>454638411</li>
+      </ul>
+
+      <itunes-lookup-result appId="284910350"></itunes-lookup-result>
+    </div>
+
+  </core-header-panel>
+
+
+</body>
+</html>

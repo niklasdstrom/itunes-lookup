@@ -1,0 +1,36 @@
+{
+  "name": "itunes-lookup",
+  "author": [
+    {
+      "name": "Niklas Ström",
+      "email": "niklas.strom@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/niklasdstrom/itunes-lookup.git"
+  },
+  "keywords": "itunes, lookup, polymer, web-components",
+  "main": "itunes-lookup.html",
+  "description": "Connection to the itunes lookup api",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.4",
+    "polymer-test-tools": "Polymer/polymer-test-tools#~0.3.3",
+    "polymer-jsonp": "Polymer/polymer-jsonp#>=0.3.0"
+  },
+  "devDependencies": {
+    "paper-elements": "Polymer/paper-elements#~0.3.5"
+  },
+  "homepage": "https://github.com/niklasdstrom/itunes-lookup",
+  "_release": "a9aa4ee716",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a9aa4ee7164af830565aa3ac2f32334a78a070b5"
+  },
+  "_source": "git://github.com/niklasdstrom/itunes-lookup.git",
+  "_target": "master",
+  "_originalSource": "niklasdstrom/itunes-lookup",
+  "_direct": true
+}
