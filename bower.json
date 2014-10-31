@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git://github.com/niklasdstrom/itunes-lookup.git"
   },
-  "keywords": "itunes, lookup, polymer, web-components",
+  "keywords": ["itunes", "lookup", "polymer", "web-components"],
   "main": "itunes-lookup.html",
   "description": "Connection to the itunes lookup api",
   "license": "MIT",
